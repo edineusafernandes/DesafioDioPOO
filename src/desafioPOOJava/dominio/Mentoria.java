@@ -2,11 +2,14 @@ package desafioPOOJava.dominio;
 
 import java.time.LocalDate;
 
-public class Mentoria {
+public class Mentoria extends Conteudo {
 
-    private String titulo;
-    private String descricao;
     private LocalDate data;
+
+    @Override
+    public double calcularXp() {
+        return xP_PADRAO + 20;
+    }
 
     public Mentoria() {
 
@@ -14,23 +17,9 @@ public class Mentoria {
 
     @Override
     public String toString() {
-        return "Mentoria [Titulo = " + titulo + ", Descrição = " + descricao + ", Data = " + data + "]";
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+        return "Mentoria [Titulo = " + getTitulo() +
+                ", Descrição = " + getDescricao() +
+                ", Data = " + data + "]";
     }
 
     public LocalDate getData() {
